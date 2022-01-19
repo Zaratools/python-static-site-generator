@@ -27,8 +27,8 @@ class Content(Mapping):
             return self.data["type"] if "type" in self.data else None
 
         @type.setter
-        def type(self, value):
-            self.data["type"] = value
+        def type(self, type):
+            self.data["type"] = type
 
         def __getitem__(self, key):
             return self.data[key]
@@ -41,7 +41,7 @@ class Content(Mapping):
 
         def __repr__(self):
             data = {}
-            for (key, value) in self.data.items():
+            for key, value in self.data.items():
                 if key != "content":
                     data[key] = value
             return str(data)
